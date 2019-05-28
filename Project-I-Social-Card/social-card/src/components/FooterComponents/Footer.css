@@ -1,0 +1,58 @@
+.footer {
+    width:150px;
+    margin-left:60px;    
+
+}
+
+#footerlist {
+    display: flex;
+    position: relative;
+    margin:0;
+    padding:0;
+    justify-content: space-between;
+    /*width: 100%;*/
+    /*height: auto;*/
+}
+
+
+#footerlist li {
+  margin: 5px ;
+  padding: 0;
+  list-style: none;
+/*  position: absolute;*/
+  top: 0;
+}
+
+#footerlist li, #footerlist a {
+  height: 16px;
+  width: 16px;
+  display: block;
+}
+
+#f1 {
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/KFArhqLBgwa.png');
+    background-repeat: no-repeat;
+    background-size: 25px 289px;
+    background-position: 0 -76px;
+}
+
+#f2 {
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/KFArhqLBgwa.png');
+    background-repeat: no-repeat;
+    background-size: 25px 289px;
+    background-position: 0 -127px;
+}
+
+#f3 {
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/KFArhqLBgwa.png');
+    background-repeat: no-repeat;
+    background-size: 25px 289px;
+    background-position: 0 -178px;
+}
+
+#f4 {
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/KFArhqLBgwa.png');
+    background-repeat: no-repeat;
+    background-size: 25px 289px;
+    background-position: 0 -229px;
+}
