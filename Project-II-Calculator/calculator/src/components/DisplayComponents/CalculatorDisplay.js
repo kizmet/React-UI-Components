@@ -2,22 +2,15 @@ import React, { Component } from 'react';
 import './Display.css';
 
 
-function Button(props) {
-    return (
-        <button className={props.name} onClick={props.onClick}>
-            {props.value}
-        </button>
-    );
-}
 
-function NumberButton(props) {
+function Button(props) {
     const isAction = i => {
         return !isNaN(i);
     };
     return (
         <button
             className={`${props.name} ${
-                isAction(props.value) ? null : "actionButton"
+                isAction(props.value) ? "numberButton" : "actionButton"
                 }`}
             onClick={props.onClick}
         >
@@ -37,11 +30,13 @@ class CalculatorDisplay extends Component {
     addToInput(i) {
         this.setState({ input: this.state.input + i });
     };
-
+    clearInput(i) {
+        this.setState({ input: 0 });
+    };
 
     numberButton(i,name) {
         return (
-            <NumberButton
+            <Button
                 value={i}
                 name={name}
                 onClick={() => this.addToInput(i)}
@@ -51,13 +46,23 @@ class CalculatorDisplay extends Component {
 
     actionButton(i,name) {
         return (
-            <Button 
-            name={name}
-            value={i}
+            <Button
+                value={i}
+                name={name}
+                onClick={() => {return (null)}}
             />
-
-        )
+        );
     }
+    clearButton(i,name) {
+        return (
+            <Button
+                value={i}
+                name={name}
+                onClick={() => this.clearInput(i)}
+            />
+        );
+    }
+
     render() {
         const TotalButton = props => {
             return (
@@ -74,30 +79,30 @@ class CalculatorDisplay extends Component {
                     <TotalButton input={this.state.input} />
                 </div>
                 <div className="calculatorColumn">
-                    <div className="calculatorRow">{this.actionButton("clear", "wideButton")}</div>
+                    <div className="calculatorRow">{this.clearButton("clear", "wideButton")}</div>
                     <div className="calculatorRow">
-                        {this.numberButton(9, "numberButton")}
-                        {this.numberButton(8, "numberButton")}
-                        {this.numberButton(7, "numberButton")}
+                        {this.numberButton(9,"")}
+                        {this.numberButton(8, "")}
+                        {this.numberButton(7, "")}
                     </div>
                     <div className="calculatorRow">
-                        {this.numberButton(6, "numberButton")}
-                        {this.numberButton(5, "numberButton")}
-                        {this.numberButton(4, "numberButton")}
+                        {this.numberButton(6, "")}
+                        {this.numberButton(5, "")}
+                        {this.numberButton(4, "")}
                     </div>
                     <div className="calculatorRow">
-                        {this.numberButton(3, "numberButton")}
-                        {this.numberButton(2, "numberButton")}
-                        {this.numberButton(1, "numberButton")}
+                        {this.numberButton(3, "")}
+                        {this.numberButton(2, "")}
+                        {this.numberButton(1, "")}
                     </div>
                     <div className="calculatorRow">{this.numberButton(0, "wideButton")}</div>
                 </div>
                 <div className="calculatorColumn">
-                    <div className="calculatorRow">{this.actionButton("/", "actionButton")}</div>
-                    <div className="calculatorRow">{this.actionButton("*", "actionButton")}</div>
-                    <div className="calculatorRow">{this.actionButton("+", "actionButton")}</div>
-                    <div className="calculatorRow">{this.actionButton("-", "actionButton")}</div>
-                    <div className="calculatorRow">{this.actionButton("=", "actionButton")}</div>
+                    <div className="calculatorRow">{this.actionButton("/", "")}</div>
+                    <div className="calculatorRow">{this.actionButton("*", "")}</div>
+                    <div className="calculatorRow">{this.actionButton("+", "")}</div>
+                    <div className="calculatorRow">{this.actionButton("-", "")}</div>
+                    <div className="calculatorRow">{this.actionButton("=", "")}</div>
                 </div>
             </div>
         )
