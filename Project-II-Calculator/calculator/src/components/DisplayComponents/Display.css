@@ -1,0 +1,43 @@
+.calculatorDisplay {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.displayRow {
+    flex:1 100%;
+
+}
+.input {
+    width: 120px;
+    height: 30px;
+    background: black;
+    color:white;        
+    
+}
+.calculatorColumn {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color:black;        
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    background: white;
+    color:black;    
+}
+
+.numberButton {
+    height: 30px;
+    width: 30px;    
+}
+
+.wideButton {
+    width: 90px;
+}
+
+.actionButton {
+    background: red;
+    color:white;
+}
